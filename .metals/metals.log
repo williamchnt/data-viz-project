@@ -1,0 +1,5 @@
+[0m2021.11.01 20:32:04 INFO  Started: Metals version 0.10.8 in workspace 'C:\Users\Utilisateur\OneDrive\Documents\Efrei\M1\data-visualisation\TD\project\data-viz-project' for client Visual Studio Code 1.61.2.[0m
+[0m2021.11.01 20:32:06 INFO  time: initialize in 1.26s[0m
+[0m2021.11.01 20:32:06 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.01 20:32:06 WARN  no build tool detected in workspace 'C:\Users\Utilisateur\OneDrive\Documents\Efrei\M1\data-visualisation\TD\project\data-viz-project'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.11.01 20:32:37 INFO  shutting down Metals[0m
