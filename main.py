@@ -59,7 +59,7 @@ def count_rows(rows):
     return len(rows)
 
 @logFunction
-@st.cache
+#@st.cache
 def FirstLoad():
     findLocal=False
     for filename in os.listdir("data"):
