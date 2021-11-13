@@ -67,7 +67,7 @@ def FirstLoad():
             findLocal = True
 
     try:
-        df2020 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/FJWGM7VHFZoi6IMd/full_2020.csv",low_memory=False,nrows=10000,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2020 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/FJWGM7VHFZoi6IMd/full_2020.csv",low_memory=False,nrows=1000000,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
         findWeb = True
     except:
         findWeb = False
