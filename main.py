@@ -78,6 +78,7 @@ def FirstLoad():
 
     if findLocal | findWeb:
         df2020 = df2020.fillna(0)
+        """
         df2020['date_mutation'] = pd.to_datetime(df2020['date_mutation'])
         df2020['adresse_suffixe'] = df2020['adresse_suffixe'].astype(str)
         df2020['nature_mutation'] = df2020['nature_mutation'].astype(str)
@@ -112,6 +113,7 @@ def FirstLoad():
         del df2020['code_nature_culture']
         del df2020['nature_culture']
         del df2020['nature_culture_speciale']
+        """
     else:
         df2020=pd.DataFrame()
 
