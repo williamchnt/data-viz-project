@@ -108,14 +108,16 @@ def load2019():
             findLocal = True
 
     try:
-        df = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/_a9ye_OhaHCQD-5m/full_2019.csv",low_memory=False)
+        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/euufBA3uw_yMcac3/full_2019_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/-Nd9hqgZcaNrFFr8/full_2019_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df=pd.concat([df1,df2])
         findWeb = True
     except:
         findWeb = False
 
 
     if (findLocal) & (not(findWeb)):
-        df = pd.read_csv("data/full_2019.csv",low_memory=False)
+        df = pd.read_csv("data/full_2019.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
 
 
     if findLocal | findWeb:
@@ -131,29 +133,6 @@ def load2019():
         df['code_commune'] = df['code_commune'].astype(str)
         df['code_departement'] = df['code_departement'].astype(str)
         df['type_local'] = df['type_local'].astype(str)
-        del df['id_mutation']
-        del df['numero_disposition']
-        del df['ancien_code_commune']
-        del df['ancien_nom_commune']
-        del df['numero_volume']
-        del df['ancien_id_parcelle']
-        del df['lot1_numero']
-        del df['lot1_surface_carrez']
-        del df['lot2_numero']
-        del df['lot2_surface_carrez']
-        del df['lot3_numero']
-        del df['lot3_surface_carrez']
-        del df['lot4_numero']
-        del df['lot4_surface_carrez']
-        del df['lot5_numero']
-        del df['lot5_surface_carrez']
-        del df['nombre_lots']
-        del df['code_type_local']
-        del df['code_nature_culture_speciale']
-        del df['id_parcelle']
-        del df['code_nature_culture']
-        del df['nature_culture']
-        del df['nature_culture_speciale']
     else:
         df=pd.DataFrame()
 
@@ -168,19 +147,20 @@ def load2018():
             findLocal = True
 
     try:
-        df = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/wjMP7xGCsv58ubEQ/full_2018.csv",nrows=10000,low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/ZTpBSHlXGuS7warE/full_2018_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/SkdqjGsRQG2_UJZu/full_2018_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df=pd.concat([df1,df2])
         findWeb = True
     except:
         findWeb = False
 
 
     if (findLocal) & (not(findWeb)):
-        df = pd.read_csv("data/full_2018.csv",low_memory=False)
+        df = pd.read_csv("data/full_2018.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
 
 
     if findLocal | findWeb:
         df = df.fillna(0)
-        """""
         df['date_mutation'] = pd.to_datetime(df['date_mutation'])
         df['adresse_suffixe'] = df['adresse_suffixe'].astype(str)
         df['nature_mutation'] = df['nature_mutation'].astype(str)
@@ -192,30 +172,7 @@ def load2018():
         df['code_commune'] = df['code_commune'].astype(str)
         df['code_departement'] = df['code_departement'].astype(str)
         df['type_local'] = df['type_local'].astype(str)
-        del df['id_mutation']
-        del df['numero_disposition']
-        del df['ancien_code_commune']
-        del df['ancien_nom_commune']
-        del df['numero_volume']
-        del df['ancien_id_parcelle']
-        del df['lot1_numero']
-        del df['lot1_surface_carrez']
-        del df['lot2_numero']
-        del df['lot2_surface_carrez']
-        del df['lot3_numero']
-        del df['lot3_surface_carrez']
-        del df['lot4_numero']
-        del df['lot4_surface_carrez']
-        del df['lot5_numero']
-        del df['lot5_surface_carrez']
-        del df['nombre_lots']
-        del df['code_type_local']
-        del df['code_nature_culture_speciale']
-        del df['id_parcelle']
-        del df['code_nature_culture']
-        del df['nature_culture']
-        del df['nature_culture_speciale']
-        """""
+        
     else:
         df=pd.DataFrame()
 
@@ -230,15 +187,16 @@ def load2017():
             findLocal = True
 
     try:
-        df = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/aTGKakJ607Nbitjo/full_2017.csv",low_memory=False)
+        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/VmmTtUnW-2w43p3M/full_2017_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/y3g2u96r_ncH9raf/full_2017_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df=pd.concat([df1,df2])
         findWeb = True
     except:
         findWeb = False
 
 
     if (findLocal) & (not(findWeb)):
-        df = pd.read_csv("data/full_2017.csv",low_memory=False)
-
+        df = pd.read_csv("data/full_2017.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
 
     if findLocal | findWeb:
         df = df.fillna(0)
@@ -253,29 +211,6 @@ def load2017():
         df['code_commune'] = df['code_commune'].astype(str)
         df['code_departement'] = df['code_departement'].astype(str)
         df['type_local'] = df['type_local'].astype(str)
-        del df['id_mutation']
-        del df['numero_disposition']
-        del df['ancien_code_commune']
-        del df['ancien_nom_commune']
-        del df['numero_volume']
-        del df['ancien_id_parcelle']
-        del df['lot1_numero']
-        del df['lot1_surface_carrez']
-        del df['lot2_numero']
-        del df['lot2_surface_carrez']
-        del df['lot3_numero']
-        del df['lot3_surface_carrez']
-        del df['lot4_numero']
-        del df['lot4_surface_carrez']
-        del df['lot5_numero']
-        del df['lot5_surface_carrez']
-        del df['nombre_lots']
-        del df['code_type_local']
-        del df['code_nature_culture_speciale']
-        del df['id_parcelle']
-        del df['code_nature_culture']
-        del df['nature_culture']
-        del df['nature_culture_speciale']
     else:
         df=pd.DataFrame()
 
@@ -290,14 +225,16 @@ def load2016():
             findLocal = True
 
     try:
-        df = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/tlTiWC59mst-ssFh/full_2016.csv",low_memory=False)
+        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/cieyN14CTX4Gt37D/full_2016_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/B7zm6SxbTWyfV_5Y/full_2016_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df=pd.concat([df1,df2])
         findWeb = True
     except:
         findWeb = False
 
 
     if (findLocal) & (not(findWeb)):
-        df = pd.read_csv("data/full_2016.csv",low_memory=False)
+        df = pd.read_csv("data/full_2016.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
 
 
     if findLocal | findWeb:
@@ -313,29 +250,6 @@ def load2016():
         df['code_commune'] = df['code_commune'].astype(str)
         df['code_departement'] = df['code_departement'].astype(str)
         df['type_local'] = df['type_local'].astype(str)
-        del df['id_mutation']
-        del df['numero_disposition']
-        del df['ancien_code_commune']
-        del df['ancien_nom_commune']
-        del df['numero_volume']
-        del df['ancien_id_parcelle']
-        del df['lot1_numero']
-        del df['lot1_surface_carrez']
-        del df['lot2_numero']
-        del df['lot2_surface_carrez']
-        del df['lot3_numero']
-        del df['lot3_surface_carrez']
-        del df['lot4_numero']
-        del df['lot4_surface_carrez']
-        del df['lot5_numero']
-        del df['lot5_surface_carrez']
-        del df['nombre_lots']
-        del df['code_type_local']
-        del df['code_nature_culture_speciale']
-        del df['id_parcelle']
-        del df['code_nature_culture']
-        del df['nature_culture']
-        del df['nature_culture_speciale']
     else:
         df=pd.DataFrame()
 
