@@ -186,7 +186,7 @@ def load2018():
             findLocal = True
 
     try:
-        df = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/wjMP7xGCsv58ubEQ/full_2018.csv",low_memory=False)
+        df = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/wjMP7xGCsv58ubEQ/full_2018.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
         findWeb = True
     except:
         findWeb = False
@@ -198,6 +198,7 @@ def load2018():
 
     if findLocal | findWeb:
         df = df.fillna(0)
+        """""
         df['date_mutation'] = pd.to_datetime(df['date_mutation'])
         df['adresse_suffixe'] = df['adresse_suffixe'].astype(str)
         df['nature_mutation'] = df['nature_mutation'].astype(str)
@@ -232,6 +233,7 @@ def load2018():
         del df['code_nature_culture']
         del df['nature_culture']
         del df['nature_culture_speciale']
+        """""
     else:
         df=pd.DataFrame()
 
