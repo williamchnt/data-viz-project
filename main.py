@@ -189,8 +189,8 @@ def load2017():
             findLocal = True
 
     try:
-        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/VmmTtUnW-2w43p3M/full_2017_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
-        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/y3g2u96r_ncH9raf/full_2017_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/S6-KYfXauAnjddes/full_2017_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/Mp1P6dBasOFixtrh/full_2017_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
         df=pd.concat([df1,df2])
         findWeb = True
     except:
@@ -698,8 +698,8 @@ def nav():
     st.sidebar.subheader("Selectionner les années")
     a = st.sidebar.checkbox("2020")
     b = st.sidebar.checkbox("2019")
-    c = st.sidebar.checkbox("2018",True)
-    d = st.sidebar.checkbox("2017")
+    c = st.sidebar.checkbox("2018")
+    d = st.sidebar.checkbox("2017",True)
     e = st.sidebar.checkbox("2016")
     return rad,a,b,c,d,e
 
