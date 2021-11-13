@@ -67,13 +67,16 @@ def FirstLoad():
             findLocal = True
 
     try:
-        df2020 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/FJWGM7VHFZoi6IMd/full_2020.csv",low_memory=False,nrows=1500000,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df1 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/GOrVpuxe12bweaK9/full_2020_1.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2 = pd.read_csv("https://chenutfamily.freeboxos.fr:45883/share/-mqSOhjWBxt-rSMZ/full_2020_2.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
+        df2020=pd.concat([df1,df2])
+ 
         findWeb = True
     except:
         findWeb = False
 
     if (findLocal) & (not(findWeb)):
-        df2020 = pd.read_csv("data/full_2020.csv",low_memory=False)
+        df2020 = pd.read_csv("data/full_2020.csv",low_memory=False,usecols=['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude'])[['date_mutation','nature_mutation','valeur_fonciere','adresse_numero','adresse_suffixe','adresse_nom_voie','adresse_code_voie','code_postal','code_commune','nom_commune','code_departement','type_local','surface_reelle_bati','nombre_pieces_principales','surface_terrain','longitude','latitude']]
 
 
     if findLocal | findWeb:
@@ -90,31 +93,7 @@ def FirstLoad():
         df2020['code_commune'] = df2020['code_commune'].astype(str)
         df2020['code_departement'] = df2020['code_departement'].astype(str)
         df2020['type_local'] = df2020['type_local'].astype(str)
-        """
-        del df2020['id_mutation']
-        del df2020['numero_disposition']
-        del df2020['ancien_code_commune']
-        del df2020['ancien_nom_commune']
-        del df2020['numero_volume']
-        del df2020['ancien_id_parcelle']
-        del df2020['lot1_numero']
-        del df2020['lot1_surface_carrez']
-        del df2020['lot2_numero']
-        del df2020['lot2_surface_carrez']
-        del df2020['lot3_numero']
-        del df2020['lot3_surface_carrez']
-        del df2020['lot4_numero']
-        del df2020['lot4_surface_carrez']
-        del df2020['lot5_numero']
-        del df2020['lot5_surface_carrez']
-        del df2020['nombre_lots']
-        del df2020['code_type_local']
-        del df2020['code_nature_culture_speciale']
-        del df2020['id_parcelle']
-        del df2020['code_nature_culture']
-        del df2020['nature_culture']
-        del df2020['nature_culture_speciale']
-        """
+       
     else:
         df2020=pd.DataFrame()
 
