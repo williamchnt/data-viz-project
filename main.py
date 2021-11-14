@@ -699,13 +699,32 @@ def nav():
     st.sidebar.title("Menu")
     st.sidebar.subheader("Navigation")
     rad = st.sidebar.radio("",["Accueil","Rechercher par commune ou département","Rechercher une adresse"])
-    st.sidebar.subheader("Selectionner les années")
-    a = st.sidebar.checkbox("2020")
-    b = st.sidebar.checkbox("2019")
-    c = st.sidebar.checkbox("2018")
-    d = st.sidebar.checkbox("2017",True)
-    e = st.sidebar.checkbox("2016")
+    #st.sidebar.subheader("Selectionner les années")
+    #a = st.sidebar.checkbox("2020",True)
+    #b = st.sidebar.checkbox("2019")
+    #c = st.sidebar.checkbox("2018")
+    #d = st.sidebar.checkbox("2017")
+    #e = st.sidebar.checkbox("2016")
+    a=False
+    b=False
+    c=False
+    d=False
+    e=False
+    st.sidebar.subheader("Selectionner l'années")
+    year = st.sidebar.radio(
+    "",
+    ['2020', '2018','2016'])
+    st.sidebar.warning("Afin d'éviter un crash de l'application streamlitshare, qu'une seule année peut être sélectionnée. Les années 2019 et 2017 ont aussi été désactiver pour les même raisons.")
+    st.sidebar.warning("Le github de la version local : ")
+    if year =="2020":
+        a=True
+    if year=="2018":
+        c=True
+    if year=="2016":
+        d=True
+
     return rad,a,b,c,d,e
+
 
 def PrintInfoAdress(df,indice):
     header_1_column, header_2_column,  = st.columns(2)
