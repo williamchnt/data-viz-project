@@ -706,7 +706,7 @@ def nav():
     d = st.sidebar.checkbox("2017")
     e = st.sidebar.checkbox("2016")
     st.sidebar.warning("Afin d'éviter un crash de l'application streamlitshare, les données seront limitées")
-    st.sidebar.warning("L'ensemble des données sont exploitable en version local sur ce github :")
+    st.sidebar.warning("L'ensemble des données sont exploitable en version local sur ce github : https://github.com/williamchnt/data-viz-project-local.git")
 
     return rad,a,b,c,d,e
 
